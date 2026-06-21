@@ -24,12 +24,12 @@ const features = [
 
 export default function HomePage() {
   return (
-    <div className="landing-bg">
+    <div>
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="mx-auto max-w-6xl px-4 py-16 md:py-24">
           <div className="mx-auto max-w-3xl text-center">
-            <span className="inline-block rounded-full border border-brand-500/30 bg-brand-500/10 px-4 py-1.5 text-sm font-medium text-brand-600 backdrop-blur dark:border-brand-400/30 dark:text-brand-300">
+            <span className="inline-block rounded-full border border-brand-500/30 bg-brand-500/10 px-4 py-1.5 text-sm font-medium text-brand-600 backdrop-blur dark:border-brand-400/30 dark:text-brand-100">
               انتقال ارز، ساده و مطمئن
             </span>
             <h1 className="mt-6 text-3xl font-extrabold leading-tight text-brand-500 drop-shadow-sm md:text-5xl">
@@ -56,7 +56,7 @@ export default function HomePage() {
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {features.map((f) => (
             <div key={f.title} className="card">
-              <h3 className="font-bold text-wine-800 dark:text-brand-200">{f.title}</h3>
+              <h3 className="font-bold text-wine-800 dark:text-white">{f.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-charcoal-600 dark:text-neutral-400">{f.desc}</p>
             </div>
           ))}
@@ -74,7 +74,7 @@ export default function HomePage() {
               <span className="flex h-10 w-10 items-center justify-center rounded-xl text-lg font-bold text-white shadow-lg shadow-brand-500/30" style={{ backgroundImage: "linear-gradient(135deg, #d52a2a 0%, #3f1212 100%)" }}>
                 {i + 1}
               </span>
-              <h3 className="mt-4 text-lg font-bold text-wine-800 dark:text-brand-200">{s.title}</h3>
+              <h3 className="mt-4 text-lg font-bold text-wine-800 dark:text-white">{s.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-charcoal-600 dark:text-neutral-400">{s.desc}</p>
             </div>
           ))}

@@ -67,7 +67,7 @@ export function RequestForm() {
     return (
       <div className="mx-auto max-w-xl px-4 py-20 text-center">
         <div className="card">
-          <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-wine-100 text-2xl text-wine-700 dark:bg-wine-900/40 dark:text-wine-200">
+          <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-wine-100 text-2xl text-wine-700 dark:bg-wine-900/40 dark:text-white">
             ✓
           </div>
           <h1 className="mt-4 text-xl font-bold text-brand-500">
@@ -107,7 +107,7 @@ export function RequestForm() {
       <form onSubmit={handleSubmit} className="mt-8">
         {/* بخش مبدأ */}
         <div className="card mb-6">
-          <h2 className="mb-4 text-base font-bold text-wine-800 dark:text-brand-200">
+          <h2 className="mb-4 text-base font-bold text-wine-800 dark:text-white">
             ارزی که داری
           </h2>
 
@@ -161,7 +161,7 @@ export function RequestForm() {
 
         {/* بخش مقصد */}
         <div className="card mb-6">
-          <h2 className="mb-4 text-base font-bold text-wine-800 dark:text-brand-200">
+          <h2 className="mb-4 text-base font-bold text-wine-800 dark:text-white">
             ارزی که می‌خواهی تحویل بگیری
           </h2>
 
@@ -207,7 +207,7 @@ export function RequestForm() {
 
         {/* راه ارتباطی */}
         <div className="card mb-6">
-          <h2 className="mb-4 text-base font-bold text-wine-800 dark:text-brand-200">
+          <h2 className="mb-4 text-base font-bold text-wine-800 dark:text-white">
             راه ارتباطی
           </h2>
 
@@ -239,7 +239,9 @@ export function RequestForm() {
               className="input"
               dir="ltr"
               placeholder={
-                form.contactMethod === "telegram" ? "@username یا شماره" : "+98..."
+                form.contactMethod === "telegram"
+                  ? "@username یا شماره"
+                  : "+98..."
               }
               value={form.contactValue}
               onChange={(e) => update("contactValue", e.target.value)}

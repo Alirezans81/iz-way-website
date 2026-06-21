@@ -39,7 +39,7 @@ export default async function ProfilePage() {
 
       {/* اطلاعات کاربر */}
       <div className="card mt-8">
-        <h2 className="mb-4 text-base font-bold text-wine-800 dark:text-brand-200">اطلاعات حساب</h2>
+        <h2 className="mb-4 text-base font-bold text-wine-800 dark:text-white">اطلاعات حساب</h2>
         <dl className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div>
             <dt className="text-xs text-gray-400 dark:text-neutral-500">نام و نام خانوادگی</dt>

@@ -20,18 +20,12 @@ body {
   -webkit-font-smoothing: antialiased;
   color: #343434;
   background-color: #f7efef;
-  background-image:
-    radial-gradient(80% 50% at 80% -5%, rgba(213, 42, 42, 0.1), transparent 60%),
-    linear-gradient(170deg, #fbeded 0%, #f3f0f0 55%, #efeaea 100%);
   background-attachment: fixed;
 }
 
 .dark body {
   color: #e7e2e2;
   background-color: #1a0f0f;
-  background-image:
-    radial-gradient(80% 50% at 80% -5%, rgba(213, 42, 42, 0.16), transparent 60%),
-    linear-gradient(170deg, #2a0f0f 0%, #1d1414 50%, #1c1c1c 100%);
   background-attachment: fixed;
 }
 
@@ -43,16 +37,26 @@ body {
   /* دکمهٔ اصلی با گرادیان شرابی→قرمز */
   .btn-primary {
     @apply btn text-white;
-    background-image: linear-gradient(135deg, #d52a2a 0%, #8a1f1f 55%, #3f1212 100%);
+    background-image: linear-gradient(
+      135deg,
+      #d52a2a 0%,
+      #8a1f1f 55%,
+      #3f1212 100%
+    );
     box-shadow: 0 6px 18px rgba(213, 42, 42, 0.28);
   }
   .btn-primary:hover {
-    background-image: linear-gradient(135deg, #e64545 0%, #9c2424 55%, #511818 100%);
+    background-image: linear-gradient(
+      135deg,
+      #e64545 0%,
+      #9c2424 55%,
+      #511818 100%
+    );
     box-shadow: 0 8px 22px rgba(213, 42, 42, 0.38);
   }
 
   .btn-outline {
-    @apply btn border border-wine-300/70 text-wine-800 hover:bg-wine-50 dark:border-white/15 dark:text-brand-200 dark:hover:bg-white/5;
+    @apply btn border border-wine-300/70 text-wine-800 hover:bg-wine-50 dark:border-white/15 dark:text-brand-50 dark:hover:bg-white/5;
   }
 
   .label {
@@ -98,13 +102,15 @@ body {
     backdrop-filter: blur(16px) saturate(140%);
     -webkit-backdrop-filter: blur(16px) saturate(140%);
     border: 1px solid rgba(255, 255, 255, 0.6);
-    box-shadow: 0 8px 30px rgba(63, 18, 18, 0.1),
+    box-shadow:
+      0 8px 30px rgba(63, 18, 18, 0.1),
       inset 0 1px 0 rgba(255, 255, 255, 0.55);
   }
   .dark .card {
     background-color: rgba(52, 52, 52, 0.28);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45),
+    box-shadow:
+      0 12px 36px rgba(0, 0, 0, 0.45),
       inset 0 1px 0 rgba(255, 255, 255, 0.06);
   }
 }
@@ -113,16 +119,20 @@ body {
 .landing-bg {
   position: relative;
   isolation: isolate;
-  background-image:
-    radial-gradient(120% 70% at 0% 50%, rgba(213, 42, 42, 0.15), transparent 60%),
-    radial-gradient(90% 60% at 100% 0%, rgba(233, 155, 155, 0.4), transparent 55%),
-    linear-gradient(165deg, #fdf2f2 0%, #f4eeee 0%, #ece7e7 100%);
+  background-image: linear-gradient(
+    165deg,
+    #fdf2f2 0%,
+    #f4eeee 0%,
+    #ece7e7 100%
+  );
 }
 .dark .landing-bg {
-  background-image:
-    radial-gradient(100% 70% at 0% 50%, rgba(213, 42, 42, 0.05), transparent 58%),
-    radial-gradient(90% 70% at 100% 0%, rgba(63, 18, 18, 0.5), transparent 60%),
-    linear-gradient(165deg, #3f1212 0%, #0a0808 0%, #1c1c1c 100%);
+  background-image: linear-gradient(
+    165deg,
+    #3f1212 0%,
+    #0a0808 0%,
+    #1c1c1c 100%
+  );
 }
 
 /* لایهٔ نویز روی پس‌زمینهٔ لندینگ */
