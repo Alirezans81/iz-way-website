@@ -24,18 +24,18 @@ const features = [
 
 export default function HomePage() {
   return (
-    <div>
+    <div className="landing-bg">
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="mx-auto max-w-6xl px-4 py-16 md:py-24">
           <div className="mx-auto max-w-3xl text-center">
-            <span className="inline-block rounded-full bg-wine-100 px-4 py-1.5 text-sm font-medium text-wine-700 dark:bg-wine-900/40 dark:text-wine-200">
+            <span className="inline-block rounded-full border border-brand-500/30 bg-brand-500/10 px-4 py-1.5 text-sm font-medium text-brand-600 backdrop-blur dark:border-brand-400/30 dark:text-brand-300">
               انتقال ارز، ساده و مطمئن
             </span>
-            <h1 className="mt-6 text-3xl font-extrabold leading-tight text-wine-900 dark:text-wine-100 md:text-5xl">
+            <h1 className="mt-6 text-3xl font-extrabold leading-tight text-brand-500 drop-shadow-sm md:text-5xl">
               انتقال ارز بین ایران و سایر کشورها
             </h1>
-            <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-gray-600 dark:text-neutral-300 md:text-lg">
+            <p className="mx-auto mt-5 max-w-2xl text-base leading-relaxed text-charcoal-600 dark:text-neutral-300 md:text-lg">
               پولت در هر کشوری و روی هر پلتفرمی که باشد، آن را به ارز و مقصد دلخواهت
               منتقل می‌کنیم. کافی است یک درخواست ثبت کنی.
             </p>
@@ -56,8 +56,8 @@ export default function HomePage() {
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {features.map((f) => (
             <div key={f.title} className="card">
-              <h3 className="font-bold text-wine-800 dark:text-wine-200">{f.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-neutral-400">{f.desc}</p>
+              <h3 className="font-bold text-wine-800 dark:text-brand-200">{f.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-charcoal-600 dark:text-neutral-400">{f.desc}</p>
             </div>
           ))}
         </div>
@@ -65,17 +65,17 @@ export default function HomePage() {
 
       {/* مراحل */}
       <section className="mx-auto max-w-6xl px-4 py-16">
-        <h2 className="text-center text-2xl font-bold text-wine-900 dark:text-wine-100 md:text-3xl">
+        <h2 className="text-center text-2xl font-bold text-brand-500 md:text-3xl">
           چطور کار می‌کند؟
         </h2>
         <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
           {steps.map((s, i) => (
             <div key={s.title} className="card relative">
-              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-wine-700 text-lg font-bold text-white">
+              <span className="flex h-10 w-10 items-center justify-center rounded-xl text-lg font-bold text-white shadow-lg shadow-brand-500/30" style={{ backgroundImage: "linear-gradient(135deg, #d52a2a 0%, #3f1212 100%)" }}>
                 {i + 1}
               </span>
-              <h3 className="mt-4 text-lg font-bold text-wine-800 dark:text-wine-200">{s.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-neutral-400">{s.desc}</p>
+              <h3 className="mt-4 text-lg font-bold text-wine-800 dark:text-brand-200">{s.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-charcoal-600 dark:text-neutral-400">{s.desc}</p>
             </div>
           ))}
         </div>
@@ -83,14 +83,20 @@ export default function HomePage() {
 
       {/* CTA */}
       <section className="mx-auto max-w-6xl px-4 pb-20">
-        <div className="rounded-2xl bg-wine-700 px-6 py-12 text-center text-white md:py-16">
+        <div
+          className="relative overflow-hidden rounded-2xl px-6 py-12 text-center text-white shadow-2xl shadow-wine-900/30 md:py-16"
+          style={{
+            backgroundImage:
+              "radial-gradient(100% 120% at 0% 0%, rgba(213,42,42,0.55), transparent 60%), linear-gradient(135deg, #3f1212 0%, #2a0f0f 55%, #343434 100%)",
+          }}
+        >
           <h2 className="text-2xl font-bold md:text-3xl">آماده‌ای انتقال را شروع کنی؟</h2>
-          <p className="mx-auto mt-3 max-w-xl text-wine-100">
+          <p className="mx-auto mt-3 max-w-xl text-white/80">
             همین حالا درخواستت را ثبت کن تا در سریع‌ترین زمان با تو هماهنگ کنیم.
           </p>
           <Link
             href="/request"
-            className="btn mt-6 bg-white text-wine-700 hover:bg-wine-50"
+            className="btn mt-6 bg-white text-wine-900 hover:bg-brand-50"
           >
             ثبت درخواست
           </Link>

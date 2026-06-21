@@ -26,7 +26,7 @@ export default async function RootLayout({
           }}
         />
       </head>
-      <body className="flex min-h-screen flex-col bg-wine-50/40 text-gray-800 dark:bg-neutral-950 dark:text-neutral-200">
+      <body className="flex min-h-screen flex-col">
         <Header
           isLoggedIn={!!user}
           userName={user ? `${user.firstName} ${user.lastName}` : null}

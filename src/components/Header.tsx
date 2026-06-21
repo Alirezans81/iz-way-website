@@ -23,10 +23,10 @@ export function Header({ isLoggedIn, userName }: Props) {
 
   const navLinks = (
     <>
-      <Link href="/" className="text-gray-600 hover:text-wine-700 dark:text-neutral-300 dark:hover:text-wine-300" onClick={() => setOpen(false)}>
+      <Link href="/" className="text-charcoal-600 hover:text-brand-600 dark:text-neutral-300 dark:hover:text-brand-300" onClick={() => setOpen(false)}>
         خانه
       </Link>
-      <Link href="/request" className="text-gray-600 hover:text-wine-700 dark:text-neutral-300 dark:hover:text-wine-300" onClick={() => setOpen(false)}>
+      <Link href="/request" className="text-charcoal-600 hover:text-brand-600 dark:text-neutral-300 dark:hover:text-brand-300" onClick={() => setOpen(false)}>
         ثبت درخواست
       </Link>
     </>
@@ -53,7 +53,7 @@ export function Header({ isLoggedIn, userName }: Props) {
   );
 
   return (
-    <header className="sticky top-0 z-30 border-b border-wine-100 bg-white/80 backdrop-blur dark:border-neutral-800 dark:bg-neutral-950/80">
+    <header className="sticky top-0 z-30 border-b border-wine-200/50 bg-white/60 backdrop-blur-xl dark:border-white/10 dark:bg-charcoal-900/50">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
         <Logo />
 
@@ -78,9 +78,9 @@ export function Header({ isLoggedIn, userName }: Props) {
       </div>
 
       {open && (
-        <div className="md:hidden border-t border-wine-100 bg-white px-4 py-4 dark:border-neutral-800 dark:bg-neutral-950">
+        <div className="md:hidden border-t border-wine-200/50 bg-white/80 px-4 py-4 backdrop-blur-xl dark:border-white/10 dark:bg-charcoal-900/80">
           <nav className="flex flex-col gap-4">{navLinks}</nav>
-          <div className="mt-4 flex flex-col gap-3 border-t border-gray-100 pt-4 dark:border-neutral-800">
+          <div className="mt-4 flex flex-col gap-3 border-t border-wine-200/40 pt-4 dark:border-white/10">
             {authLinks}
           </div>
         </div>

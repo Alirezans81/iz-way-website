@@ -27,7 +27,7 @@ export default async function ProfilePage() {
     <div className="mx-auto max-w-4xl px-4 py-12">
       <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
         <div>
-          <h1 className="text-2xl font-bold text-wine-900 dark:text-wine-100">
+          <h1 className="text-2xl font-bold text-brand-500">
             {user.firstName} {user.lastName}
           </h1>
           <p className="mt-1 text-sm text-gray-500 dark:text-neutral-400" dir="ltr">
@@ -39,7 +39,7 @@ export default async function ProfilePage() {
 
       {/* اطلاعات کاربر */}
       <div className="card mt-8">
-        <h2 className="mb-4 text-base font-bold text-wine-800 dark:text-wine-200">اطلاعات حساب</h2>
+        <h2 className="mb-4 text-base font-bold text-wine-800 dark:text-brand-200">اطلاعات حساب</h2>
         <dl className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div>
             <dt className="text-xs text-gray-400 dark:text-neutral-500">نام و نام خانوادگی</dt>
@@ -64,7 +64,7 @@ export default async function ProfilePage() {
 
       {/* درخواست‌ها */}
       <div className="mt-8 flex items-center justify-between">
-        <h2 className="text-lg font-bold text-wine-900 dark:text-wine-100">درخواست‌های من</h2>
+        <h2 className="text-lg font-bold text-brand-500">درخواست‌های من</h2>
         <Link href="/request" className="btn-primary">
           درخواست جدید
         </Link>

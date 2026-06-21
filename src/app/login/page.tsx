@@ -45,7 +45,7 @@ export default function LoginPage() {
   return (
     <div className="mx-auto max-w-md px-4 py-16">
       <div className="card">
-        <h1 className="text-xl font-bold text-wine-900 dark:text-wine-100">ورود به حساب</h1>
+        <h1 className="text-xl font-bold text-brand-500">ورود به حساب</h1>
         <p className="mt-1 text-sm text-gray-500 dark:text-neutral-400">
           خوش آمدی! وارد حسابت شو.
         </p>
