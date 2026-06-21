@@ -1,0 +1,51 @@
+// Prisma schema — برای توسعه از SQLite استفاده می‌شود.
+// برای محیط واقعی کافی است provider را به "postgresql" تغییر دهید.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String           @id @default(cuid())
+  email         String           @unique
+  passwordHash  String
+  firstName     String
+  lastName      String
+  phoneCountry  String // کد کشور شماره موبایل، مثلا +98
+  phoneNumber   String // خود شماره موبایل
+  createdAt     DateTime         @default(now())
+  updatedAt     DateTime         @updatedAt
+  requests      TransferRequest[]
+}
+
+model TransferRequest {
+  id              String   @id @default(cuid())
+
+  // ارز مبدأ (پولی که کاربر دارد)
+  sourceCountry   String   // پول در چه کشوری است
+  sourceCurrency  String   // چه ارزی
+  amount          String   // چه مقدار از آن ارز (به‌صورت رشته تا اعداد بزرگ/اعشاری مشکل نشوند)
+  platform        String   // در چه پلتفرمی دارد (آزاد: Wise، PayPal، بانک ...)
+
+  // ارز مقصد (پولی که می‌خواهد تحویل بگیرد)
+  destCountry     String   // کجا می‌خواهد انتقال دهد
+  destCurrency    String   // چه ارزی می‌خواهد تحویل بگیرد
+  cashDelivery    Boolean  @default(false) // تحویل نقدی (فقط در مشهد)
+
+  // راه ارتباطی
+  contactMethod   String   // telegram | whatsapp | bale | phone
+  contactValue    String   // مقدار راه ارتباطی (آیدی یا شماره)
+
+  note            String?  // توضیحات اختیاری
+
+  status          String   @default("pending") // pending | reviewing | done | rejected
+  createdAt       DateTime @default(now())
+
+  user            User?    @relation(fields: [userId], references: [id])
+  userId          String?
+}

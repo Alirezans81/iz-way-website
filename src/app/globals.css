@@ -1,0 +1,51 @@
+@import url("https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Vazirmatn", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-medium transition-colors duration-150 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .btn-primary {
+    @apply btn bg-wine-700 text-white hover:bg-wine-800;
+  }
+  .btn-outline {
+    @apply btn border border-wine-200 text-wine-700 hover:bg-wine-50 dark:border-wine-800 dark:text-wine-200 dark:hover:bg-wine-950/50;
+  }
+  .input {
+    @apply w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-800 outline-none transition focus:border-wine-500 focus:ring-2 focus:ring-wine-100 placeholder:text-gray-400 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100 dark:placeholder:text-neutral-500 dark:focus:border-wine-500 dark:focus:ring-wine-900/50;
+  }
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-gray-700 dark:text-neutral-300;
+  }
+  .field {
+    @apply mb-4;
+  }
+  .card {
+    @apply rounded-2xl border border-gray-200 bg-white p-6 shadow-lg shadow-wine-900/[0.06] ring-1 ring-black/[0.02] dark:border-neutral-800 dark:bg-neutral-900 dark:shadow-black/40 dark:ring-white/[0.03];
+  }
+}
+
+/* اعداد فارسی برای ورودی‌ها به‌صورت پیش‌فرض لاتین می‌مانند تا برای پلتفرم‌ها قابل استفاده باشند */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
