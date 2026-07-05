@@ -31,7 +31,7 @@ export default async function RootLayout({
           isLoggedIn={!!user}
           userName={user ? `${user.firstName} ${user.lastName}` : null}
         />
-        <main className="landing-bg flex-1">{children}</main>
+        <main className="landing-bg flex-1 flex flex-col">{children}</main>
         <Footer />
       </body>
     </html>

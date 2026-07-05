@@ -34,7 +34,7 @@ body {
     @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-medium transition-all duration-150 disabled:cursor-not-allowed disabled:opacity-60;
   }
 
-  /* دکمهٔ اصلی با گرادیان شرابی→قرمز */
+  /* دکمهٔ اصلی با گرادیان شرابی←قرمز */
   .btn-primary {
     @apply btn text-white;
     background-image: linear-gradient(

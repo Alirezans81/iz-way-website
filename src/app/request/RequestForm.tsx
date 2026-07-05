@@ -65,7 +65,7 @@ export function RequestForm() {
 
   if (done) {
     return (
-      <div className="mx-auto max-w-xl px-4 py-20 text-center">
+      <div className="w-full mx-auto max-w-xl px-4 py-20 text-center">
         <div className="card">
           <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-wine-100 text-2xl text-wine-700 dark:bg-wine-900/40 dark:text-white">
             ✓
@@ -96,7 +96,7 @@ export function RequestForm() {
   }
 
   return (
-    <div className="mx-auto max-w-2xl px-4 py-12">
+    <div className="w-full mx-auto max-w-2xl px-4 py-12">
       <h1 className="text-2xl font-bold text-brand-500">
         ثبت درخواست انتقال ارز
       </h1>

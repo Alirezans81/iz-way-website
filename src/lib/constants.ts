@@ -7,10 +7,29 @@ export const CONTACT_METHODS = [
   { value: "phone", label: "تماس مستقیم" },
 ] as const;
 
+export const STATUS_LABELS: Record<string, { text: string; cls: string }> = {
+  pending: {
+    text: "در انتظار بررسی",
+    cls: "bg-amber-50 text-amber-700 dark:bg-amber-500/15 dark:text-amber-300",
+  },
+  reviewing: {
+    text: "در حال انجام",
+    cls: "bg-blue-50 text-blue-700 dark:bg-blue-500/15 dark:text-blue-300",
+  },
+  done: {
+    text: "انجام شد",
+    cls: "bg-green-50 text-green-700 dark:bg-green-500/15 dark:text-green-300",
+  },
+  rejected: {
+    text: "رد شد",
+    cls: "bg-red-50 text-red-600 dark:bg-red-500/15 dark:text-red-300",
+  },
+} as const;
+
 export type ContactMethod = (typeof CONTACT_METHODS)[number]["value"];
 
 export const CONTACT_METHOD_LABELS: Record<string, string> = Object.fromEntries(
-  CONTACT_METHODS.map((m) => [m.value, m.label])
+  CONTACT_METHODS.map((m) => [m.value, m.label]),
 );
 
 // پیشنهادهای پرکاربرد برای ارز (کاربر می‌تواند مقدار دلخواه هم وارد کند)

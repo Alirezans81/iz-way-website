@@ -54,7 +54,7 @@ export default function RegisterPage() {
   }
 
   return (
-    <div className="mx-auto max-w-md px-4 py-16">
+    <div className="w-full mx-auto max-w-md px-4 py-16">
       <div className="card">
         <h1 className="text-xl font-bold text-brand-500">ساخت حساب کاربری</h1>
         <p className="mt-1 text-sm text-gray-500 dark:text-neutral-400">

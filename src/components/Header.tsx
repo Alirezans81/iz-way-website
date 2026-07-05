@@ -60,8 +60,8 @@ export function Header({ isLoggedIn, userName }: Props) {
         {/* دسکتاپ */}
         <nav className="hidden items-center gap-6 md:flex">{navLinks}</nav>
         <div className="hidden items-center gap-3 md:flex">
-          {authLinks}
           <ThemeToggle />
+          {authLinks}
         </div>
 
         {/* موبایل */}

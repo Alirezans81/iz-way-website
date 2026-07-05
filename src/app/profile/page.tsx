@@ -2,15 +2,8 @@ import { redirect } from "next/navigation";
 import Link from "next/link";
 import { getCurrentUser } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
-import { CONTACT_METHOD_LABELS } from "@/lib/constants";
+import { CONTACT_METHOD_LABELS, STATUS_LABELS } from "@/lib/constants";
 import { LogoutButton } from "@/components/LogoutButton";
-
-const STATUS_LABELS: Record<string, { text: string; cls: string }> = {
-  pending: { text: "در انتظار بررسی", cls: "bg-amber-50 text-amber-700 dark:bg-amber-500/15 dark:text-amber-300" },
-  reviewing: { text: "در حال بررسی", cls: "bg-blue-50 text-blue-700 dark:bg-blue-500/15 dark:text-blue-300" },
-  done: { text: "انجام شد", cls: "bg-green-50 text-green-700 dark:bg-green-500/15 dark:text-green-300" },
-  rejected: { text: "رد شد", cls: "bg-red-50 text-red-600 dark:bg-red-500/15 dark:text-red-300" },
-};
 
 export default async function ProfilePage() {
   const user = await getCurrentUser();
@@ -24,13 +17,16 @@ export default async function ProfilePage() {
   });
 
   return (
-    <div className="mx-auto max-w-4xl px-4 py-12">
+    <div className="w-full mx-auto max-w-4xl px-4 py-12">
       <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
         <div>
           <h1 className="text-2xl font-bold text-brand-500">
             {user.firstName} {user.lastName}
           </h1>
-          <p className="mt-1 text-sm text-gray-500 dark:text-neutral-400" dir="ltr">
+          <p
+            className="mt-1 text-sm text-gray-500 dark:text-neutral-400"
+            dir="ltr"
+          >
             {user.email}
           </p>
         </div>
@@ -39,23 +35,37 @@ export default async function ProfilePage() {
 
       {/* اطلاعات کاربر */}
       <div className="card mt-8">
-        <h2 className="mb-4 text-base font-bold text-wine-800 dark:text-white">اطلاعات حساب</h2>
+        <h2 className="mb-4 text-base font-bold text-wine-800 dark:text-white">
+          اطلاعات حساب
+        </h2>
         <dl className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <div>
-            <dt className="text-xs text-gray-400 dark:text-neutral-500">نام و نام خانوادگی</dt>
+            <dt className="text-xs text-gray-400 dark:text-neutral-500">
+              نام و نام خانوادگی
+            </dt>
             <dd className="mt-1 text-sm text-gray-800 dark:text-neutral-200">
               {user.firstName} {user.lastName}
             </dd>
           </div>
           <div>
-            <dt className="text-xs text-gray-400 dark:text-neutral-500">ایمیل</dt>
-            <dd className="mt-1 text-sm text-gray-800 dark:text-neutral-200" dir="ltr">
+            <dt className="text-xs text-gray-400 dark:text-neutral-500">
+              ایمیل
+            </dt>
+            <dd
+              className="mt-1 text-sm text-gray-800 dark:text-neutral-200 text-end"
+              dir="ltr"
+            >
               {user.email}
             </dd>
           </div>
           <div>
-            <dt className="text-xs text-gray-400 dark:text-neutral-500">شماره موبایل</dt>
-            <dd className="mt-1 text-sm text-gray-800 dark:text-neutral-200" dir="ltr">
+            <dt className="text-xs text-gray-400 dark:text-neutral-500">
+              شماره موبایل
+            </dt>
+            <dd
+              className="mt-1 text-sm text-gray-800 dark:text-neutral-200 text-end"
+              dir="ltr"
+            >
               {user.phoneCountry} {user.phoneNumber}
             </dd>
           </div>
@@ -82,7 +92,7 @@ export default async function ProfilePage() {
               <div key={r.id} className="card">
                 <div className="flex flex-wrap items-center justify-between gap-2">
                   <span className="text-sm font-medium text-gray-800 dark:text-neutral-200">
-                    {r.amount} {r.sourceCurrency} → {r.destCurrency}
+                    {r.amount} {r.sourceCurrency} ← {r.destCurrency}
                   </span>
                   <span
                     className={`rounded-full px-3 py-1 text-xs ${status.cls}`}
@@ -91,11 +101,14 @@ export default async function ProfilePage() {
                   </span>
                 </div>
                 <div className="mt-3 grid grid-cols-1 gap-2 text-sm text-gray-600 dark:text-neutral-400 sm:grid-cols-2">
-                  <p>از: {r.sourceCountry} ({r.platform})</p>
+                  <p>
+                    از: {r.sourceCountry} ({r.platform})
+                  </p>
                   <p>به: {r.destCountry}</p>
                   <p>تحویل نقدی: {r.cashDelivery ? "بله (مشهد)" : "خیر"}</p>
                   <p>
-                    تماس: {CONTACT_METHOD_LABELS[r.contactMethod] ?? r.contactMethod}{" "}
+                    تماس:{" "}
+                    {CONTACT_METHOD_LABELS[r.contactMethod] ?? r.contactMethod}{" "}
                     — <span dir="ltr">{r.contactValue}</span>
                   </p>
                 </div>
